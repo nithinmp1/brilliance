@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tiny.cloud/1/pay1qgusvphcemjsuun54yz633ss23kx2hs7p4armhmfljbs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+  <textarea id ="textarea">
+  </textarea>
+
+  <span id="malayalam"></span>
+  <script>
+    gapi.load('client', function () {
+        gapi.client.init({
+            apiKey: 'AIzaSyDfpQ7CGF2rW3dkgYG7GPPtbxb1G6xBREw',
+            discoveryDocs: ['https://translation.googleapis.com/$discovery/rest?version=v2'],
+        });
+
+    });
+
+    selectedLanguage = 'en';
+    var lastWord = '';
+
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss translate',
+      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat translate',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      language: selectedLanguage,
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ],
+      ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+        });
+    (function () {
+        tinymce.PluginManager.add('translate', function (editor) {
+            var lastWord = '';
+            editor.on('keyup', function (e) {
+                if (e.keyCode === 32) {
+                    const content = editor.getContent();
+                    // const cursorIndex = editor.selection.getRng().startOffset;
+                    // const startIndex = content.lastIndexOf(' ', cursorIndex - 1) + 1;
+                    // const endIndex = content.indexOf(' ', cursorIndex);
+                    // const englishText = content.substring(startIndex, endIndex);
+                    // console.log(englishText);
+                    // Call the translation function and replace the word with the translation
+                    translateToMalayalam(content, function (translatedText) {
+                        console.log(translatedText);
+                        $('#malayalam').html(translatedText);
+                    });
+                }
+            });
+
+            // Translation function (similar to previous examples)
+            function translateToMalayalam(text, callback) {
+                console.log(text);
+                gapi.client.language.translations.translate({
+                    q: text,
+                    target: 'ml',
+                }).then(function (response) {
+                    const translatedText = response.result.data.translations[0].translatedText;
+                    callback(translatedText);
+                });
+            }
+        });
+    })();
+
+  </script>
+</body>
+</html>

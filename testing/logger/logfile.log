@@ -1,0 +1,1 @@
+[2023-09-23T21:13:30.602948+02:00] my_logger.ERROR: An error occurred. {"user_id":123,"exception":{"data":"error"}} []

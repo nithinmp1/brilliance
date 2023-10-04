@@ -1,0 +1,131 @@
+Planing sheet 
+1. Admin panel 
+      * student
+           * add
+           * edit
+           * mark list
+      * staff
+           * add
+           * edit
+      * exam
+           * question master
+           * schedule exam
+      * online exam list
+
+2. B2C
+       * students 
+          * login (otp)
+          * profile 
+          * sheduled exam
+          * social media sharing 
+       * customer 
+          * online exam
+          * otp while submit 
+          * social media sharing 
+ Requirements 
+* Send grid credentials (for mail library)
+* Twilio (for whatsapp)
+* jwt.io credentials (for user management)
+
+
+required Modules
+
+1. Admin
+2. Student
+3. Staff
+4. B2c
+5. Mailer
+
+
+API
+* user
+* exam
+* mailer 
+* loger class
+
+P8nw5d6DDUzI
+
+https://github.com/AMS777/ams-bl
+https://routesnroots.in/dcrm/index.php?admin/testEditor
+
+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
+
+
+twilio
+
+nithinmp.us@gmail.com
+Nithin@123#5678910
+
+Recovery code
+GUHKGCN81XVSE2GKNSBM81YM
+
+send grid
+sureshbrilliancetcr@gmail.com
+brilliance@123#5
+
+
+// 30/09/2023 
+
+1. background color need to change like whatsapp - Done
+2. headr and footer need to add - Night
+3. font class need to change like website - Done
+4. button need to change keep radio - Done
+5. font width need to add - Done
+6. questions count need show above question - Done
+7. Game Over test need to change dynamicaly - Done
+
+GMP
+ista 
+
+CRM
+
+Notifications
+    1. category No - 
+    2. Post(sub streams)
+    3. Califications
+    5. notification-date application
+    4. Age Limit
+    6. last-date application
+    7. link
+    8. exam date
+
+submit -> alert send
+
+
+Coruse 
+    add edit delete
+
+    1 clurk SBI - Duration, fees, age_limitation,   
+
+
+
+
+Sales
+    1. sales
+    1. enqury managment 
+        1 add, edit, assign. -> notification thrugh app, message , mail
+
+        number
+        name
+        place
+        stream
+        cource
+        qualification
+        age or dob
+        gmail id
+
+
+        1. show alert message if staff not seen (cron job) (call back notification)
+        2. show alert message if staff not seen to admin or manager (cron job) (call back notification) 
+        3. notification to user regarding call back (cron job) (call back notification) 
+        4. assigned staff can access and edit -> notification thrugh app, message , mail
+        
+    2. Course coordination
+    3. Finanace 
+
+
+Instructor 
+
+
+
+Studnet Registration

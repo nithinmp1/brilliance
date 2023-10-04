@@ -1,0 +1,21 @@
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<textarea id="equationInput" rows="4" cols="50"></textarea>
+
+<div id="equationOutput"></div>
+
+<script>
+  // Function to render math equations
+  function renderMath() {
+    var inputText = document.getElementById('equationInput').value;
+
+    // Use MathJax to render the equations in the output div
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "equationOutput"]);
+    document.getElementById('equationOutput').textContent = inputText;
+  }
+
+  // Listen for changes in the textarea and update the rendering
+  document.getElementById('equationInput').addEventListener('input', renderMath);
+</script>
