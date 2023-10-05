@@ -3,8 +3,10 @@
                               <?php  
                               if ($this->uri->segment(1) === 'enqury-managment') {
                                  echo "Assign To :";
+                                 $staff_idArr = json_decode($assigned_to, TRUE);
                               } else {
                                  echo "Staff :";
+                                 $staff_idArr[0] = $staff_id; 
                               } 
                               ?>
                            </label>
@@ -15,7 +17,7 @@
                                     $staff = $this->db->get_where('users',['user_type' => 'staff'])->result();
                                     foreach ($staff as $key => $value) {
                                  ?>
-                                    <option <?=(isset($staff_id) && $staff_id === $value->id)?'selected':''?> value="<?=$value->id?>"><?=$value->username.'('.$value->uuid.')'?></option>
+                                    <option <?=(isset($staff_idArr) && in_array($value->id,$staff_idArr))?'selected':''?> value="<?=$value->id?>"><?=$value->username.'('.$value->uuid.')'?></option>
                                  <?php
                                     }
                                  ?>

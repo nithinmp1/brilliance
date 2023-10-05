@@ -67,4 +67,19 @@ $(".action").click(function() {
          }
       });
    }
+
+   if ($(this).attr('do') === 'add') {
+      URL = $(this).attr('actionUrl');
+      ID = $(this).attr('pid');
+      $.ajax({
+         url: URL, 
+         dataType: 'json',
+         data: 'type=model&id='+ID,
+         type: 'get',
+         success: function(response) {
+            $(".modal-content").html(response.result);
+            $(".modal, .overlay").fadeIn();
+         }
+      });
+   }
 });

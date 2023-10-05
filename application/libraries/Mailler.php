@@ -5,7 +5,7 @@ use SendGrid\Mail\Mail;
 // use SendGrid;
 
 class Mailler {
-    private $token = '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';
+    private $token = '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';
     private $email;
     private $sendGrid;
     private $fromMail;
@@ -18,6 +18,46 @@ class Mailler {
         $this->CI->load->database();
     }
 
+    function setContent($array) {
+        $this->mail->setTemplateId('d-6af340558c074447a147088ca0b1ed11');
+
+        foreach($array as $key => $val) {
+            if (is_array($val)) {
+                $question = array_column($val, 'text');
+                $options = array_column($val, 'choices');
+                $answers = array_column($val, 'answer');
+                $choosedanswers = array_column($val, 'choosedAnswer');
+                
+                foreach ($question as $qk => $ques) {
+                    $index = sprintf("question%s", $qk+1);
+                    $this->mail->addDynamicTemplateData($index, $ques);
+
+                    $index = sprintf("answer%s", $qk+1);
+                    $this->mail->addDynamicTemplateData($index, $answers[$qk]);
+
+                    $index = sprintf("remark%s", $qk+1);
+                    if($choosedanswers[$qk] != $answers[$qk]){
+                        $remark = sprintf("Wrong! your answer is %s",$choosedanswers[$qk]);
+                    } else {
+                        $remark = sprintf("Correct Answer!");
+                    }
+                    $this->mail->addDynamicTemplateData($index, $remark);
+                   
+                }
+
+                foreach ($options as $ok => $opt) {
+                    foreach($opt as $optK => $optV) {
+                        $index = sprintf("option%s%s", $ok+1,$optK+1);
+                        $this->mail->addDynamicTemplateData($index, $optV);
+                    }
+                }
+
+            }else{
+                $this->mail->addDynamicTemplateData($key, $val);
+            }
+        }
+    }
+
     private function send($data) {
         try {
             $this->mail = new Mail();
@@ -26,7 +66,8 @@ class Mailler {
             $this->mail->setSubject($data['subject']);
             $this->mail->addTo($data['to']);
             // $this->mail->addTo('nithinmp2k17@gmail.com');
-            $this->mail->addContent("text/plain", $data['message']);
+            $this->setContent($data['message']);
+            // $this->mail->addContent("text/plain", $data['message']);
             
             $response = $this->sendGrid->send($this->mail);
         } catch (Exception $e) {
@@ -38,13 +79,29 @@ class Mailler {
         $query = $this->CI->db->get_where('quiz_req',['quiz_req_id' => $insert_id]);
         if ( isset($query) && $query->num_rows() == 1) {
             $data = $query->row();
+            $questions = json_decode($data->questions, TRUE);
+            $questions = json_decode($questions, TRUE);
+            $answers = json_decode($data->answers, TRUE);
+            $answers = json_decode($answers, TRUE);
+            foreach($questions as $key => $question){
+                $question['choosedAnswer'] = $answers[$key];
+                $quiz[] = $question; 
+
+            }
 
             $data = [
                 'from' => $this->fromMail,
                 'to' => $data->email,
                 'subject' => 'Quiz Result From Brilliance',
-                'message' => sprintf('Hi %s,  Your Quiz Result is %s. Try free quiz and improve <a>here</a>', $data->firstname, $data->score)
+                'message' => [
+                    'Sender_Name' => 'Brilliance',
+                    'name'  => $data->firstname,
+                    'score' => $data->score,
+                    'loginLink' => site_url(),
+                    'questions' => $quiz
+                ]
             ];
+
             $this->send($data);
         }
 

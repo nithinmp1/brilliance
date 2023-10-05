@@ -12,9 +12,9 @@ class Home extends ADMIN_Controller
 {
     public function __construct()
     {
-        ini_set('display_errors', '1');
-        ini_set('display_startup_errors', '1');
-        error_reporting(E_ALL & ~E_DEPRECATED);
+        // ini_set('display_errors', '1');
+        // ini_set('display_startup_errors', '1');
+        // error_reporting(E_ALL & ~E_DEPRECATED);
         parent::__construct();
         $this->load->model(array('History_model', 'Admin_users_model'));
     }

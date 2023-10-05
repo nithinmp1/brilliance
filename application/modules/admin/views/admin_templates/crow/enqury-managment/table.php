@@ -2,12 +2,14 @@
                               <thead>
                                  <tr>
                                     <th>Si No</th>
+                                    <th>Profile</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Branch</th>
+                                    <th>Stream</th>
+                                    <th>Course</th>
                                     <th>Address</th>
                                     <th>Mobile</th>
-                                    <th>Email</th>
                                     <th>Action</th>
                                  </tr>
                               </thead>
@@ -17,28 +19,38 @@
                                     $this->db->order_by('id', 'desc');
                                     $this->Home_admin_model->setWhereCondition('staff', $this->user);
                                     $data = $this->db->get_where('users',['user_type' => 'potential_users' ])->result();
-                                    echo $this->db->last_query();die;
                                     foreach ($data as $key => $value) {
                                  ?>
                                  <tr>
                                     <td><?=$key+1?></td>
-                                    <td>
-                                        <img class="img-fluid " style="max-width: 44%;" src="<?=$this->Home_admin_model->loadImage('students',$value->id)?>" >
-                                    </td>
+                                    <td><a target="_blank" style="text-decoration: none;" href="<?=sprintf($this->action['profileUrl'], $value->uuid)?>"><?=$value->uuid?></a></td>
                                     <td><?=$value->first_name?></td>
                                     <td><?=$value->last_name?></td>
                                     <td><?php
                                         $branch = $this->db->get_where('branch',['branch_id' => $value->branch_id])->row();
                                         echo $branch->name;
                                     ?></td>
+                                    <td>
+                                       <?php
+                                       if(isset($value->stream_id) && $value->stream_id != ''){
+                                        $stream = $this->db->get_where('stream',['stream_id' => $value->stream_id])->row();
+                                        echo $stream->name;
+                                       }
+                                       ?>
+                                    </td>
+                                    <td>
+                                       <?php
+                                       if(isset($value->course_id) && $value->course_id != ''){
+                                        $course = $this->db->get_where('course',['course_id' => $value->course_id])->row();
+                                        echo $course->name;
+                                       }
+                                       ?>
+                                    </td>
                                     <td><?=$value->address?></td>
-                                    <!-- <td><?=$value->mobile?></td> -->
-                                    <td><?=$value->whatsapp?></td>
-                                    <td><?=$value->email?></td>
+                                    <td><?=$value->mobile?></td>
                                     <td>
                                         <i class="fas fa-edit action" do="edit" pid="<?=$value->id?>" actionUrl="<?=$this->action['editUrl']?>" style="color: blue" ></i>
                                         <i class="fas fa-trash action" do="delete" pid="<?=$value->id?>" actionUrl="<?=$this->action['deleteUrl']?>" style="color: black" ></i>
-                                        <!-- <i class="fas fa-user action" do="login" pid="<?=$value->id?>" actionUrl="<?=$this->action['loginUrl']?>" style="color: red" ></i> -->
                                     </td>
                                  </tr>
                                  <?php } ?>

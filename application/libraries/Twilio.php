@@ -5,7 +5,7 @@ use Twilio\Rest\Client;
 
 class Twilio {
     private $accountSid = 'AC2fc756128a63c34f30e7bdc9b8bc7a75';
-    private $authToken = '02878a1be9006edbae22bdec519fdb2a';
+    private $authToken = 'b3e0aa09eca15fb0c85f3e43c0971d20';
     private $twilio;
 
     function __construct() {

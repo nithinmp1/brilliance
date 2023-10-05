@@ -107,6 +107,12 @@ $route['course'] = "admin/home/course";
 $route['course/(:any)'] = "admin/home/course";
 $route['enqury-managment'] = "admin/home/enquryManagment";
 $route['enqury-managment/(:any)'] = "admin/home/enquryManagment";
+$route['potential-users/(:any)'] = "admin/home/potentialUsers";
+$route['follow-up'] = "admin/home/potentialUsers/followUp";
+$route['follow-up/(:any)'] = "admin/home/potentialUsers/followUp";
+$route['active-follow-up'] = "admin/home/potentialUsers/followUp/active";
+
+
 
 $route['students-bulk'] = "admin/home/students/bulkAdd";
 $route['academic-bulk'] = "admin/home/acadamic/bulkAdd";

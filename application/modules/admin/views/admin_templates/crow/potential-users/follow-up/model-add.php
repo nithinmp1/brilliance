@@ -23,57 +23,17 @@
                         <?php
                         $data = new stdClass();
                         if (isset($id)) {
-                           $data = $this->db->get_where('users',['id' => $id])->row();
+                           $data = $this->db->get_where('follow_up',['follow_up_id' => $id])->row();
                            echo form_hidden('id', $id);
-                           // echo "<pre>";print_r($data);die;
+                        }
+                        if (isset($append_on_id)) {
+                              echo form_hidden('append_on_id', $append_on_id);
                         }
                         ?>
                         <div class="form-group row">
-                           <label class="control-label col-sm-3 align-self-center" for="email">Email:</label>
-                           <div class="col-sm-9">
-                              <input value="<?=(isset($data->email))?$data->email:''?>" type="email" name="email" class="form-control" id="email" placeholder="Enter Your  email">
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label class="control-label col-sm-3 align-self-center" for="mobile">Mobile Number:</label>
-                           <div class="col-sm-9">
-                              <input value="<?=(isset($data->mobile))?$data->mobile:''?>" type="text" name="mobile" class="form-control" id="mobile" placeholder="Enter Mobile Number">
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label class="control-label col-sm-3 align-self-center" for="first_name">First Name:</label>
-                           <div class="col-sm-9">
-                              <input value="<?=(isset($data->first_name))?$data->first_name:''?>" type="text" name="first_name" class="form-control" id="first_name" placeholder="Enter Your  First Name">
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label class="control-label col-sm-3 align-self-center" for="last_name">Last Name:</label>
-                           <div class="col-sm-9">
-                              <input value="<?=(isset($data->last_name))?$data->last_name:''?>" type="text" name="last_name" class="form-control" id="last_name" placeholder="Enter Your  Last Name">
-                           </div>
-                        </div>
-                        <div class="form-group row">
-                           <label class="control-label col-sm-3 align-self-center" for="address">Address:</label>
-                           <div class="col-sm-9">
-                              <input value="<?=(isset($data->address))?$data->address:''?>" type="text" name="address" class="form-control" id="address" placeholder="Enter Address">
-                           </div>
-                        </div>
-                        <?php if (!isset($id)) { ?>
-                        <?php $this->load->view($this->template.'branch-select',$data) ?>
-                        <?php $this->load->view($this->template.'stream-select',$data) ?>
-                        <?php $this->load->view($this->template.'course-select',$data) ?>
-                        <?php $this->load->view($this->template.'qualification-select',$data) ?>
-                        <div class="form-group row">
-                           <label class="control-label col-sm-3 align-self-center" for="dob">DOB:</label>
-                           <div class="col-sm-9">
-                              <input value="<?=(isset($data->dob))?$data->dob:''?>" type="date" name="dob" class="form-control"  id="dob">
-                           </div>
-                        </div>
-
-                        <div class="form-group row">
                            <label class="control-label col-sm-3 align-self-center" for="callback">Call Back:</label>
                            <div class="col-sm-9">
-                              <input value="<?=(isset($data->callback))?$data->callback:''?>" type="date" name="callback" class="form-control"  id="datepicker">
+                              <input value="<?=(isset($data->callback_on))?$data->callback_on:''?>" type="date" name="callback" class="form-control"  id="datepicker">
                            </div>
                         </div>
 
@@ -85,8 +45,11 @@
                               </textarea>
                            </div>
                         </div>
+                        <?php $this->load->view($this->template.'status-select',$data) ?>
+                        <?php if (isset($append_on_id)) { ?>
+                        <?php $this->load->view($this->template.'stream-select',$data) ?>
+                        <?php $this->load->view($this->template.'course-select',$data) ?>
                         <?php } ?>
-                        <?php $this->load->view($this->template.'staff-select',$data) ?>
                         <div id="validation_error">
                         </div>
                         <div class="form-group mb-0">
@@ -106,22 +69,19 @@
 
                   $(document).ready(function() {
                       $('#form').submit(function(e) {
-                          e.preventDefault(); // Prevent the default form submission
+                          e.preventDefault();
                           var formData = new FormData();
-                          // Serialize the form data into a JSON object
                           var serializedData  = $(this).serializeArray();
                            $.each(serializedData, function(index, item) {
                              formData.append(item.name, item.value);
                            });
 
-                           // var fileInput = document.getElementById('Photo');
-                           // formData.append('file', fileInput.files[0]);
 
                            $.ajax({
                               type: 'POST',
-                              url: '<?=$this->action['addUrl']?>',
-                              processData: false, // Prevent jQuery from processing the data
-                              contentType: false, // Prevent jQuery from setting the content type
+                              url: '<?=$this->action['appendNew']?>',
+                              processData: false,
+                              contentType: false,
                               data: formData,
                               dataType: 'json',
                               success: function(response) {
@@ -159,9 +119,6 @@
                            $.each(serializedData, function(index, item) {
                              formData.append(item.name, item.value);
                            });
-
-                           var fileInput = document.getElementById('Photo');
-                           formData.append('file', fileInput.files[0]);
 
                            $.ajax({
                               type: 'POST',

@@ -41,4 +41,8 @@ class Home extends MY_Controller
         $this->load->view('templates/crow/result',$data);
         // $this->render('result', $head, $data);   
     }
+
+    public function templateRender() {
+        $this->load->view('email-templates/index.html');
+    }
 }

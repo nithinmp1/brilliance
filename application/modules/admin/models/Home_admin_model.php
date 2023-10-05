@@ -10,8 +10,8 @@ class Home_admin_model extends CI_Model
 
     public function setWhereCondition($type, $user)
     {
-        $this->db->where('created_by',$user['login_id']);
-        // $this->db->or_where('assigned_to',$user['login_id']);
+        $this->db->where('created_id',$user['login_id']);
+        $this->db->or_where('assigned_to',$user['login_id']);
     }
 
     public function access($function = null, $param = null)

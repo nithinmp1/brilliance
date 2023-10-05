@@ -30,3 +30,49 @@ ERROR - 2023-10-04 19:21:28 --> 404 Page Not Found: /index
 ERROR - 2023-10-04 19:21:30 --> 404 Page Not Found: /index
 ERROR - 2023-10-04 19:21:32 --> 404 Page Not Found: /index
 ERROR - 2023-10-04 19:21:33 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 19:44:58 --> Severity: Warning --> Attempt to read property "name" on null C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\enqury-managment\table.php 34
+ERROR - 2023-10-04 19:44:58 --> Severity: Warning --> Attempt to read property "name" on null C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\enqury-managment\table.php 38
+ERROR - 2023-10-04 19:44:58 --> Severity: Warning --> Attempt to read property "name" on null C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\enqury-managment\table.php 34
+ERROR - 2023-10-04 19:44:58 --> Severity: Warning --> Attempt to read property "name" on null C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\enqury-managment\table.php 38
+ERROR - 2023-10-04 19:44:58 --> Severity: Warning --> Attempt to read property "name" on null C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\enqury-managment\table.php 34
+ERROR - 2023-10-04 19:44:58 --> Severity: Warning --> Attempt to read property "name" on null C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\enqury-managment\table.php 38
+ERROR - 2023-10-04 19:44:58 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 19:46:39 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 19:47:30 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 19:51:30 --> Severity: Warning --> Undefined variable $staff_id C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\staff-select.php 17
+ERROR - 2023-10-04 19:57:29 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:00:41 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:05:08 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:05:26 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:05:26 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:08:00 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:08:04 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:13:38 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 20:15:10 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:20:35 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:22:05 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:22:10 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:22:12 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:22:33 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:22:39 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:24:15 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:24:17 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:24:27 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:24:49 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:24:51 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:25:40 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:25:40 --> Severity: Warning --> Undefined property: CI::$action C:\xampp\htdocs\brilliance\application\third_party\MX\Controller.php 59
+ERROR - 2023-10-04 20:25:40 --> Severity: Warning --> Trying to access array offset on value of type null C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 123
+ERROR - 2023-10-04 20:26:48 --> Severity: Warning --> Undefined variable $updateUrl C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 84
+ERROR - 2023-10-04 20:26:48 --> Severity: Warning --> Undefined property: CI::$action C:\xampp\htdocs\brilliance\application\third_party\MX\Controller.php 59
+ERROR - 2023-10-04 20:26:48 --> Severity: Warning --> Trying to access array offset on value of type null C:\xampp\htdocs\brilliance\application\modules\admin\views\admin_templates\crow\_parts\footer.php 123
+ERROR - 2023-10-04 20:29:19 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 20:32:50 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 20:32:51 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 20:33:56 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 20:33:56 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 20:33:57 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 20:33:57 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 20:33:57 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 20:33:57 --> 404 Page Not Found: /index
+ERROR - 2023-10-04 21:22:29 --> Severity: error --> Exception: Unknown column 'callback' in 'field list' C:\xampp\htdocs\brilliance\system\database\drivers\mysqli\mysqli_driver.php 307

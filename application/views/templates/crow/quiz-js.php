@@ -180,7 +180,7 @@
                               .join('&');
 
                             // Append the query string to the URL and navigate
-                            const newURL = `https://exam.brilliance.college/result?${queryString}`;
+                            const newURL = `https://exam.brilliance.college`;
                             window.location.href = newURL;
 
                             setTimeout(function() {

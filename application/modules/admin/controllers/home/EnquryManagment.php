@@ -14,9 +14,9 @@ class EnquryManagment extends ADMIN_Controller
     public $user;
     public function __construct()
     {
-        ini_set('display_errors', '1');
-        ini_set('display_startup_errors', '1');
-        error_reporting(E_ALL & ~E_DEPRECATED);
+        // ini_set('display_errors', '1');
+        // ini_set('display_startup_errors', '1');
+        // error_reporting(E_ALL & ~E_DEPRECATED);
         parent::__construct();
         $this->load->helper('url');
         $this->load->model(array('History_model'));
@@ -27,6 +27,7 @@ class EnquryManagment extends ADMIN_Controller
             'loginUrl' => site_url('enqury-managment/login'),
             'addUrl' => site_url('enqury-managment/add'),
             'bulkAddUrl' => site_url('enqury-managment/bulkAdd'),
+            'profileUrl' => site_url('potential-users/%s'),
 
         ];
         $this->load->library('upload');
@@ -49,8 +50,6 @@ class EnquryManagment extends ADMIN_Controller
 
     public function index($param1=null, $param2=null)
     {   
-        // $dynamicObject = dynamicObject::getInstance();
-        // $user =  $dynamicObject->get('user');
         $this->saveHistory(__FUNCTION__, $this->uri->segment(2), 'started');
         $this->login_check();
 
@@ -157,7 +156,7 @@ class EnquryManagment extends ADMIN_Controller
             $id = $this->input->get('id');
 
             if ($type === 'model' ) {
-                $data['title'] = 'Course EDIT'; 
+                $data['title'] = 'Enquery EDIT'; 
                 $data['id'] = $id; 
                 $list =$this->load->view($this->template.'enqury-managment/model-add',$data, true);
                 echo json_encode(['result' => $list]);

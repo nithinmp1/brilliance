@@ -9,7 +9,7 @@ use Firebase\JWT\Key;
 // $authToken = '03bedb13c85adc3397fa53ccd1373f61';
 
 $accountSid = 'AC2fc756128a63c34f30e7bdc9b8bc7a75';
-$authToken = '02878a1be9006edbae22bdec519fdb2a';
+$authToken = 'b3e0aa09eca15fb0c85f3e43c0971d20';
 
 // Create a Twilio client
 $twilio = new Twilio\Rest\Client($accountSid, $authToken);
