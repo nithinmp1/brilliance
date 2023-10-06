@@ -66,9 +66,13 @@ class Mailler {
             $this->mail->setSubject($data['subject']);
             $this->mail->addTo($data['to']);
             // $this->mail->addTo('nithinmp2k17@gmail.com');
-            $this->setContent($data['message']);
+            // $this->setContent($data['message']);
             // $this->mail->addContent("text/plain", $data['message']);
-            
+            $htmlContent = $this->CI->load->view('email-templates/education_newsletter/index', $data['message'], TRUE);
+            $this->mail->addContent(
+                'text/html',
+                $htmlContent // Your HTML content
+            );
             $response = $this->sendGrid->send($this->mail);
         } catch (Exception $e) {
             $this->CI->monolog->push(['function' => __class__.'/'.__FUNCTION__, 'user' => '', 'data' => (array) $e]);
@@ -98,7 +102,7 @@ class Mailler {
                     'name'  => $data->firstname,
                     'score' => $data->score,
                     'loginLink' => site_url(),
-                    'questions' => $quiz
+                    'quiz' => $quiz
                 ]
             ];
 

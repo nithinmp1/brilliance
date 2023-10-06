@@ -638,6 +638,7 @@
             width: 50%;
             height: 100%;
             background-color: #f1d9dd;
+	    background-image: url('https://exam.brilliance.college/assets/images/hd-background.jpg'); 
             /*//fd0836; f6f8f9 */
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             transform: rotateX(30deg);

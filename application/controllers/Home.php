@@ -43,6 +43,32 @@ class Home extends MY_Controller
     }
 
     public function templateRender() {
-        $this->load->view('email-templates/index.html');
+        $query = $this->db->order_by('quiz_req_id','desc')->limit('1')->get('quiz_req');
+        if ( isset($query) && $query->num_rows() == 1) {
+            $data = $query->row();
+            // echo "<pre>";print_r($data);die;
+            $questions = json_decode($data->questions, TRUE);
+            $questions = json_decode($questions, TRUE);
+            $answers = json_decode($data->answers, TRUE);
+            $answers = json_decode($answers, TRUE);
+            foreach($questions as $key => $question){
+                $question['choosedAnswer'] = $answers[$key];
+                $quiz[] = $question; 
+
+            }
+        }
+         $data = [
+                'from' => 'fromMail',
+                'to' => 'email',
+                'subject' => 'Quiz Result From Brilliance',
+                'message' => [
+                    'Sender_Name' => 'Brilliance',
+                    'name'  => 'nithin',
+                    'score' => '5',
+                    'loginLink' => site_url(),
+                    'quiz' => $quiz
+                ]
+            ];
+        $this->load->view('email-templates/education_newsletter/index',$data['message']);
     }
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collapsible Content in Email</title>
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+    <label for="toggle" class="toggle-label">Toggle Content</label>
+    <div class="content">
+        <p>This is some collapsible content.</p>
+        <p>You can add more text or elements here.</p>
+    </div>
+    
+    <style>
+        /* Initial styles */
+        .content {
+            display: none;
+        }
+        
+        /* Style for the label */
+        .toggle-label {
+            cursor: pointer;
+            text-decoration: underline;
+            color: blue;
+        }
+        
+        /* Style for the checkbox */
+        #toggle {
+            display: none;
+        }
+        
+        /* When the checkbox is checked, show the content */
+        #toggle:checked + .toggle-label + .content {
+            display: block;
+        }
+    </style>
+</body>
+</html>

@@ -79,8 +79,7 @@
                 gameOverHTML +='<div class="question-div" style="display: flex;justify-content: center;align-items: center;">';
                 gameOverHTML +='<form>';
                 gameOverHTML +='<div class="form-group" id="resultDiv" style="display :none">';
-                gameOverHTML +='<label >Please Check your mail for the result</label>';
-                gameOverHTML +='<label >For more Quiz <a href="<?=$loginUrl?>">here</a></label>';
+                gameOverHTML +='<label >Please Check your mail for the result, For more Quiz <a href="<?=$loginUrl?>">here</a></label>';
                 gameOverHTML +='</div>';
                 gameOverHTML +='<div class="form-group submit-form">';
                 gameOverHTML +='<label for="name">Full Name</label>';
@@ -168,24 +167,29 @@
                             otp.style.display = 'none';
                             otpButton.style.display = 'none';
                             resultDiv.style.display = 'block';
-                            // clearInterval(interval);
-                            // Construct the query parameters
-                            const postData = {
-                              mobile: inputValue,
-                              otp: otpValue,
-                            };
 
-                            const queryString = Object.keys(postData)
-                              .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(postData[key])}`)
-                              .join('&');
+                            button.remove();
+                            mobileNumber.remove();
+                            name.remove();
+                            email.remove();
+                            otp.remove();
+                            otpButton.remove();
+                            timerElement.remove();
+                            timerLabel.remove();
+                            otpInput.remove();
 
-                            // Append the query string to the URL and navigate
-                            const newURL = `https://exam.brilliance.college`;
-                            window.location.href = newURL;
+                            var submitForm = document.getElementsByClassName("submit-form");
+                            for (let i = 0; i < submitForm.length; i++) {
+                                submitForm[i].remove();
+                            }
 
-                            setTimeout(function() {
-                              window.location.href = "<?=$loginUrl?>";
-                            }, 3000);
+                            var submitForm = document.getElementsByClassName("submit-form");
+                            for (let i = 0; i < submitForm.length; i++) {
+                                submitForm[i].remove();
+                            }
+                            // setTimeout(function() {
+                            //   window.location.href = "<?=$loginUrl?>";
+                            // }, 3000);
                         }else{
                             alert('In Valid OTP');
                         }

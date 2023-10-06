@@ -86,6 +86,7 @@ $route['login'] = "user/index";
 $route['logout'] = "user/logout";
 $route['dashboard'] = "user/dashboard";
 $route['result'] = "home/result";
+$route['mail'] = "home/templateRender";
 
 /*
  * Admin Controllers Routes

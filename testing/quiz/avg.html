@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 10px solid #ccc;
+    border-radius: 50%;
+}
+
+.circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+    background-color: #3498db; /* Change color as needed
+    border: 10px solid #ccc;/* Border color (red) */
+    transform: rotate(270deg);
+    transform-origin: center;
+}
+
+.percentage-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Circle Chart</title>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart">
+            <div class="circle"></div>
+            <div class="percentage-label">50%</div>
+        </div>
+    </div>
+</body>
+</html>
