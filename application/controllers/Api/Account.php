@@ -99,8 +99,8 @@ class Account extends REST_Controller
     private function addQuizData(object $input) : int {
         $data = [
             'user_agent' => $_SERVER['HTTP_USER_AGENT'], 
-            // 'ipaddress' => $_SERVER['REMOTE_ADDR']
-            'ipaddress' => '61.135.188.23',
+            'ipaddress' => $_SERVER['REMOTE_ADDR'],
+            // 'ipaddress' => '61.135.188.23',
             'mobile' => $input->mobile,
             'firstname' => $input->name,
             'email' => $input->email,

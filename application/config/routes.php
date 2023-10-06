@@ -123,7 +123,8 @@ $route['questions/(:any)'] = "admin/home/question";
 $route['questions/(:any)/(:any)'] = "admin/home/question";
 $route['Quiz-Master'] = "admin/home/QuizMaster";
 $route['quiz/(:any)'] = "admin/home/QuizMaster";
-$route['quiz-request/(:any)'] = "admin/home/QuizMaster";
+$route['quiz-request'] = "admin/home/QuizMaster/quizReq";
+$route['quiz-request/(:any)'] = "admin/home/QuizMaster/quizReq";
 // $route['user/profile/(:num)/(:any)'] = 'UserController/profile/$1/$2';
 /*
   | -------------------------------------------------------------------------
